@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Meet Your Friends of Magento</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600">
+
+        <link href="/assets/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.2/dist/leaflet.css"
+          integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+          crossorigin=""/>
+
+        <link rel="preconnect" href="https://www.google-analytics.com">
+
+        <link href="/assets/style.css?v=142147769" rel="stylesheet" type="text/css" />
+</head>
+
+    <body>
+        <div id="head" class="text-center pt-4 pb-4">
+            <h1>
+                <a href="/">
+                    ❤️️
+                    Meet&nbsp;Your <strong>Friends</strong> of <strong>PHP</strong>&nbsp;
+                    🐘
+                </a>
+            </h1>
+        </div>
+
+        <div class="container-fluid" id="content">
+            <div class="row">
+                <div class="col-md-12 pb-5 pt-4">
+
+
+                    
+<div id="subhead" class="pt-0 pb-4 text-center">
+    <strong>15 Magento meetups</strong> in next 30 days
+</div>
+
+
+<p class="text-center pb-2">
+    <a href="#-" onclick="locateme();" class="btn btn-primary">Locate me</a>
+    <a href="" onclick="share_bounds();" class="share-link-bounds btn btn-warning ml-3">Share Current Map</a>
+    <a href="/api/meetups.json" class="btn btn-danger ml-3">Meetups in JSON?</a>
+    <a href="/api/groups.json" class="btn btn-danger ml-3">Groups in JSON?</a>
+</p>
+
+<div class="text-center mb-3">
+    <a href="/wordpress/" class="btn btn-sm btn-outline-primary mb-2 mr-3 ">
+        124
+        WordPress meetups
+    </a>
+    <a href="/drupal/" class="btn btn-sm btn-outline-info mb-2 mr-3 ">
+        45
+        Drupal meetups
+    </a>
+    <a href="/prestashop/" class="btn btn-sm btn-outline-warning mb-2 mr-3 ">
+        11
+        PrestaShop meetups
+    </a>
+    <a href="/magento/" class="btn btn-sm btn-outline-danger mb-2  active">
+        15
+        Magento meetups
+    </a>
+</div>
+
+<a name="map"></a>
+<div id="mapid" class="mr-4"></div>
+
+<br>
+
+<script src="/assets/js/utils.js?v=355076153"></script>
+
+<div id="table"></div>
+
+<table class="table table-bordered table-responsive" id="table-meetups">
+    <thead class="thead-inverse">
+        <tr>
+            <th class="w-25 text-center">
+                📅
+                &nbsp;
+                <span class="hidden-sm-down">When</span>
+            </th>
+            <th class="w-25 text-center">
+                📍
+
+                <span class="hidden-sm-down">Where</span>
+            </th>
+            <th class="w-50 text-center">
+                <span class="hidden-sm-down">Meetup</span>
+            </th>
+        </tr>
+    </thead>
+    <tr id="block-zoomout">
+        <td colspan="3" class="text-center">
+            No meetups in this area. Try to zoom out a bit!
+        </td>
+    </tr>
+
+                                <tr class="meetup" data-longitude="16.33757" data-latitude="48.21829" data-datetime="2019-05-28 18:30">
+                <td class="w-25">
+                    <nobr>Tue, May 28</nobr>
+                    <br>
+                    <small class="text-secondary">18:30</small>
+                </td>
+                <td class="w-25">
+                    Vienna
+                    <br>
+                    <small class="text-secondary">Austria</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/magento-meetup-austria/events/260568282/">30. Magento Meetup Austria</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Meetup Austria</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="16.936527" data-latitude="52.406094" data-datetime="2019-05-30 18:00">
+                <td class="w-25">
+                    <nobr>Thu, May 30</nobr>
+                    <br>
+                    <small class="text-secondary">18:00</small>
+                </td>
+                <td class="w-25">
+                    Poznań
+                    <br>
+                    <small class="text-secondary">Poland</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/MagentoPoznan/events/261613774/">Magento MeetUp #13 (ostatni przed wakacjami)</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento #madeInPoznan</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="-2.252138" data-latitude="53.47892" data-datetime="2019-06-05 18:00">
+                <td class="w-25">
+                    <nobr>Wed, Jun 05</nobr>
+                    <br>
+                    <small class="text-secondary">18:00</small>
+                </td>
+                <td class="w-25">
+                    Greater Manchester
+                    <br>
+                    <small class="text-secondary">United Kingdom</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Minds-of-Manchester/events/260111651/">Manchester Summer Magento Meetup</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Minds of Manchester</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="115.85362" data-latitude="-31.949644" data-datetime="2019-06-05 18:30">
+                <td class="w-25">
+                    <nobr>Wed, Jun 05</nobr>
+                    <br>
+                    <small class="text-secondary">18:30</small>
+                </td>
+                <td class="w-25">
+                    Perth
+                    <br>
+                    <small class="text-secondary">Australia</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/MagentoWA/events/261426563/">Perth Magento meetup | June 2019</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento WA</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="174.76268" data-latitude="-36.851624" data-datetime="2019-06-05 19:00">
+                <td class="w-25">
+                    <nobr>Wed, Jun 05</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Auckland
+                    <br>
+                    <small class="text-secondary">New Zealand</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Auckland-Magento-User-Group/events/258448487/">Auckland Magento User Group Meetup</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Auckland Magento User Group</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="6.189215" data-latitude="52.237213" data-datetime="2019-06-06 09:00">
+                <td class="w-25">
+                    <nobr>Thu, Jun 06</nobr>
+                    <br>
+                    <small class="text-secondary">09:00</small>
+                </td>
+                <td class="w-25">
+                    Deventer
+                    <br>
+                    <small class="text-secondary">Netherlands</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-User-Group-Overijssel/events/260271096/">Vue Storefront Hackathon &amp; How to workshop</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento User Group Overijssel</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="6.539721" data-latitude="53.210804" data-datetime="2019-06-07 08:30">
+                <td class="w-25">
+                    <nobr>Fri, Jun 07</nobr>
+                    <br>
+                    <small class="text-secondary">08:30</small>
+                </td>
+                <td class="w-25">
+                    Groningen
+                    <br>
+                    <small class="text-secondary">Netherlands</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-User-Group-Groningen/events/261699752/">MageTitans Netherlands 2019</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento User Group Groningen</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="135.50427" data-latitude="34.734375" data-datetime="2019-06-11 19:00">
+                <td class="w-25">
+                    <nobr>Tue, Jun 11</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Osaka
+                    <br>
+                    <small class="text-secondary">Japan</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Meetup-Kansai/events/260669964/">[Beerbash] Magento Meetup Kansai [E-Commerce]</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Meetup Kansai</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="-0.123856" data-latitude="51.501648" data-datetime="2019-06-12 18:15">
+                <td class="w-25">
+                    <nobr>Wed, Jun 12</nobr>
+                    <br>
+                    <small class="text-secondary">18:15</small>
+                </td>
+                <td class="w-25">
+                    London
+                    <br>
+                    <small class="text-secondary">United Kingdom</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/magento-london/events/261616606/">Summer Boat Meetup</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">London Magento Users Group</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="10.119143" data-latitude="54.334743" data-datetime="2019-06-12 19:00">
+                <td class="w-25">
+                    <nobr>Wed, Jun 12</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Kiel
+                    <br>
+                    <small class="text-secondary">Germany</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Stammtisch-Kiel/events/260876131/">26. Magento Stammtisch Kiel</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Meetup Kiel</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="8.246578" data-latitude="50.01362" data-datetime="2019-06-12 19:00">
+                <td class="w-25">
+                    <nobr>Wed, Jun 12</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Mainz
+                    <br>
+                    <small class="text-secondary">Germany</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Stammtisch-Rhein-Main/events/261346048/">Magento Stammtisch Rhein-Main #38</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Stammtisch Rhein-Main</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="19.045233" data-latitude="47.541653" data-datetime="2019-06-13 19:00">
+                <td class="w-25">
+                    <nobr>Thu, Jun 13</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Budapest
+                    <br>
+                    <small class="text-secondary">Hungary</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Meetup-Hungary/events/261316616/">Magento Meetup Hungary - 2.0</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Meetup Hungary</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="6.127252" data-latitude="50.779083" data-datetime="2019-06-17 19:00">
+                <td class="w-25">
+                    <nobr>Mon, Jun 17</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Aachen
+                    <br>
+                    <small class="text-secondary">Germany</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/Magento-Stammtisch-Aachen/events/260505934/">36. Magento-Stammtisch Aachen - Magento 2 Migration &amp; Imagine-Rückblick</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento-Stammtisch Aachen</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="17.02476" data-latitude="51.1083" data-datetime="2019-06-18 19:00">
+                <td class="w-25">
+                    <nobr>Tue, Jun 18</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    Wroclaw
+                    <br>
+                    <small class="text-secondary">Poland</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/magentomeetupwro/events/260243904/">Magento Meetup Wrocław #7</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento Meetup Wrocław</small>
+                </td>
+            </tr>
+                                        <tr class="meetup" data-longitude="11.601933" data-latitude="48.117485" data-datetime="2019-06-19 19:00">
+                <td class="w-25">
+                    <nobr>Wed, Jun 19</nobr>
+                    <br>
+                    <small class="text-secondary">19:00</small>
+                </td>
+                <td class="w-25">
+                    München
+                    <br>
+                    <small class="text-secondary">Germany</small>
+                </td>
+                <td class="w-50">
+                    <strong>
+                        <a href="https://www.meetup.com/magento-e-commerce-meetup-muenchen/events/261667749/">28. Magento-Stammtisch München - 19. Juni 2019</a>
+                    </strong>
+                    <br>
+                    <small class="text-secondary">Magento E-Commerce Meetup München</small>
+                </td>
+            </tr>
+            </table>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+
+<script src="/assets/js/menu-area-pick.js?v=646855334"></script>
+
+<script src="https://unpkg.com/leaflet@1.3.2/dist/leaflet.js"
+        integrity="sha512-2fA79E27MOeBgLjmBrtAgM/20clVSV8vJERaW/EcnnWCVGwQRazzKtQS1kIusCZv1PtaQxosDZZ0F1Oastl55w=="
+        crossorigin=""></script>
+
+<script type="text/javascript">
+    var icons = {
+        // pick from: https://github.com/pointhi/leaflet-color-markers
+        green: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+        orange: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-orange.png',
+        red: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png'
+    };
+
+    var markers = [
+        
+        {
+                        "type": "green",
+                        "title": "30. Magento Meetup Austria",
+                        "position": [48.21829, 16.33757],
+                        "date": "05-28",
+                        "location": "Vienna",
+                        "url": "https://www.meetup.com/magento-meetup-austria/events/260568282/",
+                        // for filtering
+                        "datetime": "2019-05-28 18:30",
+                    },
+                                            
+                                    {
+                        "type": "green",
+                        "title": "Magento MeetUp #13 (ostatni przed wakacjami)",
+                        "position": [52.406094, 16.936527],
+                        "date": "05-30",
+                        "location": "Poznań",
+                        "url": "https://www.meetup.com/MagentoPoznan/events/261613774/",
+                        // for filtering
+                        "datetime": "2019-05-30 18:00",
+                    },
+                                            
+                                    {
+                        "type": "orange",
+                        "title": "Manchester Summer Magento Meetup",
+                        "position": [53.47892, -2.252138],
+                        "date": "06-05",
+                        "location": "Greater Manchester",
+                        "url": "https://www.meetup.com/Magento-Minds-of-Manchester/events/260111651/",
+                        // for filtering
+                        "datetime": "2019-06-05 18:00",
+                    },
+                                            
+                                    {
+                        "type": "orange",
+                        "title": "Perth Magento meetup | June 2019",
+                        "position": [-31.949644, 115.85362],
+                        "date": "06-05",
+                        "location": "Perth",
+                        "url": "https://www.meetup.com/MagentoWA/events/261426563/",
+                        // for filtering
+                        "datetime": "2019-06-05 18:30",
+                    },
+                                            
+                                    {
+                        "type": "orange",
+                        "title": "Auckland Magento User Group Meetup",
+                        "position": [-36.851624, 174.76268],
+                        "date": "06-05",
+                        "location": "Auckland",
+                        "url": "https://www.meetup.com/Auckland-Magento-User-Group/events/258448487/",
+                        // for filtering
+                        "datetime": "2019-06-05 19:00",
+                    },
+                                            
+                                    {
+                        "type": "orange",
+                        "title": "Vue Storefront Hackathon &amp; How to workshop",
+                        "position": [52.237213, 6.189215],
+                        "date": "06-06",
+                        "location": "Deventer",
+                        "url": "https://www.meetup.com/Magento-User-Group-Overijssel/events/260271096/",
+                        // for filtering
+                        "datetime": "2019-06-06 09:00",
+                    },
+                                            
+                                    {
+                        "type": "orange",
+                        "title": "MageTitans Netherlands 2019",
+                        "position": [53.210804, 6.539721],
+                        "date": "06-07",
+                        "location": "Groningen",
+                        "url": "https://www.meetup.com/Magento-User-Group-Groningen/events/261699752/",
+                        // for filtering
+                        "datetime": "2019-06-07 08:30",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "[Beerbash] Magento Meetup Kansai [E-Commerce]",
+                        "position": [34.734375, 135.50427],
+                        "date": "06-11",
+                        "location": "Osaka",
+                        "url": "https://www.meetup.com/Magento-Meetup-Kansai/events/260669964/",
+                        // for filtering
+                        "datetime": "2019-06-11 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "Summer Boat Meetup",
+                        "position": [51.501648, -0.123856],
+                        "date": "06-12",
+                        "location": "London",
+                        "url": "https://www.meetup.com/magento-london/events/261616606/",
+                        // for filtering
+                        "datetime": "2019-06-12 18:15",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "26. Magento Stammtisch Kiel",
+                        "position": [54.334743, 10.119143],
+                        "date": "06-12",
+                        "location": "Kiel",
+                        "url": "https://www.meetup.com/Magento-Stammtisch-Kiel/events/260876131/",
+                        // for filtering
+                        "datetime": "2019-06-12 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "Magento Stammtisch Rhein-Main #38",
+                        "position": [50.01362, 8.246578],
+                        "date": "06-12",
+                        "location": "Mainz",
+                        "url": "https://www.meetup.com/Magento-Stammtisch-Rhein-Main/events/261346048/",
+                        // for filtering
+                        "datetime": "2019-06-12 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "Magento Meetup Hungary - 2.0",
+                        "position": [47.541653, 19.045233],
+                        "date": "06-13",
+                        "location": "Budapest",
+                        "url": "https://www.meetup.com/Magento-Meetup-Hungary/events/261316616/",
+                        // for filtering
+                        "datetime": "2019-06-13 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "36. Magento-Stammtisch Aachen - Magento 2 Migration &amp; Imagine-Rückblick",
+                        "position": [50.779083, 6.127252],
+                        "date": "06-17",
+                        "location": "Aachen",
+                        "url": "https://www.meetup.com/Magento-Stammtisch-Aachen/events/260505934/",
+                        // for filtering
+                        "datetime": "2019-06-17 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "Magento Meetup Wrocław #7",
+                        "position": [51.1083, 17.02476],
+                        "date": "06-18",
+                        "location": "Wroclaw",
+                        "url": "https://www.meetup.com/magentomeetupwro/events/260243904/",
+                        // for filtering
+                        "datetime": "2019-06-18 19:00",
+                    },
+                                            
+                                    {
+                        "type": "red",
+                        "title": "28. Magento-Stammtisch München - 19. Juni 2019",
+                        "position": [48.117485, 11.601933],
+                        "date": "06-19",
+                        "location": "München",
+                        "url": "https://www.meetup.com/magento-e-commerce-meetup-muenchen/events/261667749/",
+                        // for filtering
+                        "datetime": "2019-06-19 19:00",
+                    }
+    ];
+
+    var grouped = {};
+
+    var tresholdDate = new Date();
+    // go 2 hours in the future, so the running meetup is discoverable; e.g. when comming late like me :)
+    tresholdDate.setHours(tresholdDate.getHours() - 2);
+    var tresholdDateTime = Date.parse(tresholdDate);
+
+    for (var i in markers) {
+        var marker = markers[i];
+
+        // is in the past?
+        var meetupDateTime = Date.parse(marker.datetime);
+        if (meetupDateTime < tresholdDateTime) {
+            continue;
+        }
+
+        // group meetups in one location
+        if (typeof grouped[marker.location] == 'undefined') {
+            grouped[marker.location] = {
+                type: marker.type,
+                position: marker.position,
+                markers: []
+            };
+        }
+
+        grouped[marker.location].markers.push(marker);
+    }
+
+    var map = L.map('mapid');
+
+    // fit to bounds, so pc and mobile have same content
+    // https://leafletjs.com/reference-1.3.2.html#latlngbounds
+
+    // reconstruction from serialized object is not completely working, so we need to restore it manually
+    var restoreBoundFromString = function(stringBound) {
+        stringBound = stringBound.replace(/%22/g, '"');
+        pastBounds = JSON.parse(stringBound);
+
+        return L.latLngBounds(
+            L.latLng(pastBounds._northEast.lat, pastBounds._northEast.lng),
+            L.latLng(pastBounds._southWest.lat, pastBounds._southWest.lng)
+        );
+    };
+
+    // get url bounds
+    var pastBounds = window.localStorage.getItem('bounds');
+
+    // @see https://stackoverflow.com/a/36444134/1348344
+    var isRefreshed = performance.navigation.type;
+
+    if (get('bounds') && isRefreshed === 0)  {
+        var boundsAsString = get('bounds');
+
+        map.fitBounds(restoreBoundFromString(boundsAsString));
+    } else if (pastBounds) {
+        map.fitBounds(restoreBoundFromString(pastBounds));
+    } else {
+        // default map - the whole world
+        map.setView([25, 0], 2);
+    }
+
+    // set metadata value under the map
+    $("#map_metadata").text(boundsToString(map.getBounds()));
+
+    // ref https://github.com/php-ug/php.ug/issues/221#issuecomment-437917289
+    var restoreDislocation = function(map) {
+        var currentCenter = map.getCenter();
+        if (currentCenter.lng > 300 || currentCenter.lng < -300) {
+            // default map - the whole world
+            alert('Whoa, you fell of the main map! Lets get back to center.');
+            map.setView([25, 0], 2);
+        }
+    };
+
+    restoreDislocation(map);
+
+
+    // store past location when map mooves
+    map.on('moveend', function(e) {
+        var bounds = map.getBounds();
+        // objects needs to serialize, since only string can be saved: https://stackoverflow.com/a/2010948/1348344
+        restoreDislocation(map);
+
+        var boundsAsString = boundsToString(bounds);
+        window.localStorage.setItem('bounds', boundsAsString);
+
+        $("#map_metadata").text(boundsAsString);
+    });
+
+    // required and nice to have promotion to great tool
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // @see https://stackoverflow.com/a/1199420/1348344
+    String.prototype.truncate = String.prototype.truncate ||
+        function(n){
+            return (this.length > n) ? this.substr(0, n-1) + '&hellip;' : this;
+        };
+
+    for (var i in grouped) {
+        var group = grouped[i];
+
+        let [first] = group.markers;
+        var description = '<div class="text-center mb-3" style="width:450px">📍&nbsp;&nbsp;'
+            + first.location
+            + "</div>";
+
+        for (var j in group.markers) {
+            marker = group.markers[j];
+
+            var url = '<a class="text-bold block text-primary ml-3" href="' + marker.url + '" target="_blank" rel="noreferrer noopener"><strong>' + marker.title.truncate(38) + '</strong></a>';
+
+            description += '<div class="mb-3">'
+                + '📅&nbsp; ' + marker.date
+                + url + '</div>'
+            ;
+        }
+
+        var icon = new L.Icon({
+            iconUrl: icons[group.type],
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34]
+        });
+
+        // width: @see https://stackoverflow.com/a/38007764/1348344
+        L.marker(group.position, { icon: icon }).addTo(map).bindPopup(description, {
+            maxWidth: 450
+        });
+    }
+</script>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+    var locateme = function(e) {
+        navigator.geolocation.getCurrentPosition(function(currentLocation) {
+            var currentLatLng = new L.LatLng(currentLocation.coords.latitude, currentLocation.coords.longitude);
+            map.setView(currentLatLng, 8);
+        });
+    };
+
+    var share_bounds = function(e) {
+        $(".share-link-bounds").attr("href", "?bounds=" + boundsToString(map.getBounds()));
+    };
+</script>
+
+<footer class="pb-5 pt-5 mt-5">
+    <div class="container-fluid">
+        <h3>How This Works?</h3>
+
+        <p>
+            This website is <strong>regenerated by <a href="https://github.com/TomasVotruba/friendsofphp.org/blob/9de36089966f32a79a3789cba0288a55c0f24ffd/.travis.yml#L28">Travis Cron</a> to <a href="https://github.com/tomasvotruba/friendsofphp.org">Github Pages</a> every 24 hours</strong>, so meetups are always fresh.
+        </p>
+
+        <p>
+            We show <strong>meetups for next 30 days</strong>, so you can pick up where to go speak or watch without being overwhelmed.
+        </p>
+
+        <hr class="mt-5 mb-5">
+
+        <h3>Why Abroad Meetups Rock?</h3>
+
+        <p>
+            Meeting people from other countries brings <strong>fresh energy to your coding</strong>, new ideas and valuable feedback.
+        </p>
+
+        <p>
+            You'll be surprised <a href="https://www.tomasvotruba.cz/blog/2018/07/23/5-signs-should-never-have-a-talk-abroad/">how easy is to get your talk there</a>. Pick meetup, write the organizer and go!
+        </p>
+
+        <hr class="mt-5 mb-5">
+
+        <p class="text-center">
+            <a href="/groups/" class="btn btn-warning btn-lg">Did we Forget Your Group?</a>
+        </p>
+
+        <br>
+
+        <div class="text-center pt-5">
+            <p class="dim">
+                Made with ❤️ on️ <a href="https://www.statie.org">Statie</a> by ️☕️ and <a href="https://tomasvotruba.com">Tomas Votruba</a>
+                <br>
+                Check <a href="https://github.com/tomasvotruba/friendsofphp.org">the repository on Github</a>
+            </p>
+        </div>
+    </div>
+</footer>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122522291-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-122522291-1');
+</script>
+    </body>
+</html>
